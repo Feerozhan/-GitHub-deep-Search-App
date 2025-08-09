@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Deep Search Tool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2><span class="icon">🔍</span> <span>GitHub Deep Search</span></h2>
+    
+    <div class="input-group">
+        <label for="topic">Project Topic</label>
+        <input type="text" id="topic" placeholder="e.g., react weather app" autofocus>
+    </div>
+    
+    <div class="input-group">
+        <label for="language">Programming Language</label>
+        <input type="text" id="language" placeholder="e.g., JavaScript">
+    </div>
+    
+    <div class="input-group">
+        <label for="stars">Minimum Stars</label>
+        <input type="number" id="stars" placeholder="Default: 50" min="0">
+    </div>
+    
+    <div class="input-group">
+        <label for="updated">Updated After</label>
+        <input type="date" id="updated" value="2024-01-01">
+    </div>
+    
+    <div class="input-group">
+        <label for="mode">Search Mode</label>
+        <select id="mode">
+            <option value="readme">Search in README</option>
+            <option value="name">Search in Name</option>
+            <option value="topic">Search by Topic Tag</option>
+            <option value="forks">Most Forked Projects</option>
+            <option value="recent">Recently Updated</option>
+        </select>
+    </div>
+
+    <button onclick="generateURL()">Search GitHub</button>
+
+    <div class="history" id="historySection" style="display: none;">
+        <h3>Recent Searches</h3>
+        <div class="history-list" id="historyList"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
